@@ -1,0 +1,101 @@
+*, ::before, ::after{margin: 0px; box-sizing: border-box;}
+/* *{outline: solid 1px red;} */
+a{text-decoration: none;}
+button{padding: 0px; cursor: pointer;}
+:disabled{cursor: not-allowed;}
+img{vertical-align: bottom;}
+iframe{border: 0px;}
+ul{list-style: none; padding: 0px;}
+label{display: inline-block;}
+
+
+
+
+// Title
+.section-title-white{
+    margin-bottom: 50px;
+    span{
+        font-size: 18px; font-weight: 700; margin:0px 0px 22px 72px; text-transform: uppercase; display: inline-block; position: relative; letter-spacing: 0.05em; color: #fff;
+        &::before{
+            position: absolute; content: ""; width: 50px; height: 2px; background:#fff; top: 50%; left: -67px; transform: translatey(-50%); 
+        }
+    }
+    h2{
+        font-size: 40px; display: block; font-weight: 600; text-transform: uppercase; color: #fff;
+    }
+}
+.section-title-black{
+    margin-bottom: 50px;
+    span{
+        font-size: 18px; font-weight: 700; margin:0px 0px 22px 72px; text-transform: uppercase; display: inline-block; position: relative; letter-spacing: 0.05em; color: #000;
+        &::before{
+            position: absolute; content: ""; width: 50px; height: 2px; background: #000; top: 50%; left: -67px; transform: translatey(-50%); 
+        }
+    }
+    h2{
+        font-size: 40px; display: block; font-weight: 600; text-transform: uppercase; color: #000;
+    }
+}
+
+
+.contruction-title{
+    margin-bottom: 50px;
+    span{
+        font-size: 18px; font-weight: 700; margin:0px 0px 22px 72px; text-transform: uppercase; display: inline-block; position: relative; letter-spacing: 0.05em; color: #000;
+        &::before{
+            position: absolute; content: ""; width: 50px; height: 2px; background: #000; top: 50%; left: -67px; transform: translatey(-50%); 
+        }
+    }
+    h2{
+        font-size: 40px; display: block; font-weight: 600; text-transform: uppercase; color: #000;
+        strong{color: #dd1313;}
+    }
+}
+
+%p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+// Buttons
+.btn{
+    background: #ff1313;
+    text-transform: uppercase;
+    padding: 20px 37px 20px 97px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    outline: 0px;
+    border: 0px;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    &::before{
+        .btn::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 101%;
+            height: 101%;
+            background: #dd1313;
+            z-index: 1;
+            border-radius: 5px;
+            transition: transform 0.5s;
+            transition-timing-function: ease;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleX(0);
+            border-radius: 0px;
+        }
+    }
+    &::after{
+        position: absolute; content: ""; width: 30px; background: #fff; left: 37px; top: 50%; transform: translateY(-50%); height: 1px;
+    }
+    :hover{
+            background-position: right;
+    }
+}

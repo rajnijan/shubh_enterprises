@@ -1,0 +1,30 @@
+
+/* Banner start */
+
+.banner{
+    .slide{
+        height: 630px; background-position: center center; display: flex; align-items: center;
+        .slide_content{
+            overflow: hidden;
+            span{
+                font-size: 18px; color:$textColorWhite; display: inline-block; font-weight: 500; text-transform: uppercase; padding-bottom: 14px; margin-bottom: 30px; position: relative; font-family: $fontStyle;
+                &::before{
+                    position: absolute; content: ""; width: 100%; height: 1px; background: $textColorWhite; left: 0; transform: translateY(-50%);bottom: 0;
+                }
+                &::after{
+                    position: absolute; content: ""; width: 60px; background: $primaryColor; left: 0; bottom: -1px; height: 3px;
+                }
+            }
+            h1{
+                font-size: 50px; font-weight: 700; margin-bottom: 24px; color: $textColorWhite; line-height: 1.1; text-transform: uppercase;
+            }
+            p{
+                font-size: 16px; color: #fff; font-family: "Inter", sans-serif; margin-bottom: 64px; padding-right: 35px;
+            }
+
+            .slide-full-content>a {
+                animation-name: fadeInLeft;
+            }
+        }
+    }
+}

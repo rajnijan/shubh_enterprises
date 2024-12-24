@@ -1,0 +1,27 @@
+
+/* Home */
+.main_header{
+    background: transparent;
+    padding: 0px 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+}
+
+
+.main{display: block;}
+.menuBar{
+    display: block;
+    nav{display: flex; justify-content: end;
+        ul{
+            li{
+                position: relative; display: inline-block;
+                a{
+                    color: #fff; display: block; font-weight: 300; padding: 29px 24px; text-transform: capitalize;
+                }
+            }
+        }
+    }    
+}

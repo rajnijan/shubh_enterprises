@@ -1,0 +1,339 @@
+@use 'reset';
+@use 'grids';
+
+$fontStyle: "Inter", sans-serif;
+$primaryColor:#ca3c3c;
+$textColorWhite:#fff;
+$blackColor:#000;
+
+$darkBg:rgba(4, 21, 28, 0.902);
+
+
+html{
+    font-size: 15px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+
+}
+body{
+    font: 16px $fontStyle;
+}
+
+/* Home */
+.main_header{background: transparent; padding: 0px 30px; position: absolute; top: 0; right: 0; left: 0; z-index: 9;}
+
+.main{display: block;}
+
+.menuBar{
+    display: block;
+    nav{display: flex; justify-content: end;
+        ul{
+            li{
+                position: relative; display: inline-block;
+                a{
+                    color: #fff; display: block; font-weight: 300; padding: 29px 24px; text-transform: capitalize;
+                    // &:hover{color: #ca3c3c;}
+                    &::before{    content: "";
+                        position: absolute;
+                        width: 0;
+                        bottom: 10px;
+                        right: 5px;
+                        left: -5px;
+                        height: 2px;
+                        z-index: 1;
+                        background: #fff;
+                        -webkit-transition: all .4s ease-out 0s;
+                        transition: all .4s ease-out 0s;} 
+                }
+                &:hover{
+                    a{
+                        &::before{left: 0;
+                            right: auto;
+                            width: 100%;
+                            -webkit-transition: all .4s ease-out 0s;
+                            transition: all .4s ease-out 0s;}
+                    }
+                    
+                }     
+            }
+            
+        }
+    }    
+}
+/* Banner start */
+
+
+.white-text{color: $textColorWhite;}
+.black-text{color: $blackColor;}
+.text-center{text-align: center;}
+
+.darkBg{background: $darkBg;}
+
+.banner{
+    .slide{
+        height: 630px; background-position: center center; display: flex; align-items: center;
+        .slide_content{
+            overflow: hidden;
+            span{
+                font-size: 18px; color:$textColorWhite; display: inline-block; font-weight: 500; text-transform: uppercase; padding-bottom: 14px; margin-bottom: 30px; position: relative; font-family: $fontStyle;
+                &::before{
+                    position: absolute; content: ""; width: 100%; height: 1px; background: $textColorWhite; left: 0; transform: translateY(-50%);bottom: 0;
+                }
+                &::after{
+                    position: absolute; content: ""; width: 60px; background: $primaryColor; left: 0; bottom: -1px; height: 3px;
+                }
+            }
+            h1{
+                font-size: 50px; font-weight: 700; margin-bottom: 24px; color: $textColorWhite; line-height: 1.1; text-transform: uppercase;
+            }
+            p{
+                font-size: 16px; color: #fff; font-family: "Inter", sans-serif; margin-bottom: 64px; padding-right: 35px;
+            }
+
+            .slide-full-content>a {
+                animation-name: fadeInLeft;
+            }
+        }
+    }
+}
+
+
+/* About area */
+.about-area{
+    padding: 150px 0px;
+    .about-contant{
+        margin-bottom: 50px;
+    }
+    p{
+        @extend %p; color: $blackColor; margin-bottom: 30px; padding-right: 50px;
+    }
+    .about-img{
+        position: relative;
+        .about-img-front{
+            position: relative;
+            z-index: 1;
+        }
+        .about-img-back{
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            top: 40px;
+        }
+    }
+}
+
+/* Service area */
+.service-area{
+    position: relative; z-index: 0; padding: 70px 0px;
+    .service-bg{
+        background-image: url(../img/sectionBg.png); position: absolute; top: 0; left: 0; right: 0; height: 570px; background-repeat: no-repeat; z-index: -1;
+    }
+
+    .service-blocks{
+        background: #f8f8f8; padding:60px 20px; border-radius: 7px; -webkit-transition: .5s; transition: .5s; margin-bottom: 30px; box-shadow: 0px 0px 12px #ccc;
+        .service-icon{
+            position: relative; display: inline-block;
+            i{
+                color: #000; display: block; font-size: 50px; text-align: center; margin-bottom: 15px;
+            }
+        }
+        .service-content{
+            h3{
+                color: #1d2434; margin-top: 0px; font-style: normal; font-weight: 500;
+                a{
+                    font-size: 18px; font-weight: 600; line-height: 1.2; margin-bottom: 15px; display: inline-block; text-transform: uppercase; color: #15181d;}
+            }
+            p{
+                @extend %p; color: #717081;
+            }
+        }
+    }
+
+}
+
+/* Sector-area */
+.sector-area{
+    .sector-card{
+        transition: all 0.5s; position: relative; z-index: 1; margin-bottom: 100px;
+        img{width: 100%;}
+        .sector-content{
+            position: absolute; width: 100%; top: 100%; left: 0px; background: $textColorWhite; padding: 10px 10px; transition: all 0.5s;            
+            h4{
+                font-weight: 700; font-size: 26px; color: $blackColor; font-size: 16px; margin-bottom: 0px; display: block;
+            }
+            p{font-size: 15px; color: $blackColor;}
+        }
+    }
+    // &:hover .sector-content{top: 90%;}
+}
+
+.sector-card:hover .sector-content{top: 90%;}
+
+/* repaire-area */
+.repaire-area{
+    background: url(../img/repaire_area_bg.png) no-repeat top center / cover; height: 100%; z-index: 0;
+    .repair-content{
+        background: rgba(4,21,28,0.902); padding: 120px 50px 80px;
+        h2{
+            font-size: 40px; color: $textColorWhite; display: block; margin-bottom: 30px; font-weight: 800;
+        }
+        p{margin-bottom: 50px; color: $textColorWhite;}
+    }
+}
+
+
+/* About area */
+.other-area{
+    padding: 100px 0px;
+    .other-contant{
+        margin-bottom: 50px;
+    }
+    p{
+        @extend %p; color: $blackColor; margin-bottom: 30px; padding-right: 50px;
+    }    
+    .other-img{
+        position: relative;
+        .other-img-front{
+            position: relative;
+            z-index: 1;
+        }
+        .other-img-back{
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            top: 40px;
+        }
+    }
+    .other-img-left{
+        position: relative;
+        .other-img-front{
+            position: relative;
+            z-index: 1;
+        }
+        .other-img-back{
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            top: 40px;
+        }
+    }
+}
+
+
+/* footer */
+footer{
+    background: url(../img/footer_bg.png) no-repeat center center / cover; background-attachment: fixed; padding: 70px 0px 10px;
+    .footer-block{
+        margin-bottom: 20px;
+       .footer-logo{margin-bottom: 10px;}
+       .footer-content 
+       {
+        p{color: #ced9e1; font-size: 14px; margin-bottom: 50px; line-height: 1.8;}
+        h5{color: #fff; font-size: 18px; margin-bottom: 30px; font-weight: 700; text-transform: uppercase;}
+        ul{
+            li{
+                margin-bottom: 15px;
+                a{color: #ced9e1; font-size: 14px; font-weight: 300;}
+            }
+            li.contact-info{
+                margin-bottom: 20px; display: flex; align-items:start;
+                .contact-info-icon{
+                    margin:5px 10px 0px 0px;
+                    min-width: 20px; 
+                    i{color: #ced9e1; font-size: 18px;}
+                }
+                .contact-text{
+                    margin: 0px;
+                    p{font-size: 15px; color: #ced9e1; font-weight: 300; margin: 0px;}
+                }
+            }
+        }
+       }
+    }
+
+    p.copy-right{text-align: center; padding: 10px 0px; font-size: 14px; color: #ced9e1;}
+}
+
+
+
+/*===================  About Page =====================*/
+.inner-slider{
+    background: $textColorWhite;
+    .slider{
+        position: relative; z-index: 0; height: 250px; background-repeat: no-repeat; background-size: cover; background-position: center center;
+        .slider-content{
+            padding: 120px 0px 0px; text-align: center;
+            h1{font-size: 50px; color: $textColorWhite;}
+        } 
+    }
+}
+
+
+
+/*===================  Sector Page =====================*/
+
+
+
+
+/*===================  Our Product Page =====================*/
+
+
+
+
+/*===================  Contact Page =====================*/
+.main-contact{
+    padding: 50px 0px 100px;
+    .shubh-form{
+        .form-block
+        {
+            margin-bottom: 30px;
+            .form-block-control, .form-block-textarea{
+                border: 1px solid #e5e6e9; height: 48px; padding: 6px 12px; font-size: 13px; display: block; width: 100%;
+            }
+        }        
+        .form-block .form-block-textarea{
+            height: 100%;
+        }
+        :focus{outline: 0px;}
+    }
+    .contact-info-block
+    {        
+        ul{
+            li{
+                margin-bottom: 15px;
+                a{color: $blackColor; font-size: 14px; font-weight: 300;}
+            }
+            li.contact-info{
+                margin-bottom: 20px; display: flex; align-items:start;
+                .contact-info-icon{
+                    margin:5px 20px 0px 0px; 
+                    i{color: $blackColor; font-size: 18px;}
+                }
+                .contact-text{
+                    margin: 0px;
+                    p{font-size: 15px; color: $blackColor; font-weight: 300; margin: 0px;}
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Under Construction */
+.underConstruction{
+    padding: 100px 0px;
+    .contruction-contant{
+        margin-bottom: 50px;
+    }
+    p{
+        @extend %p; color: $blackColor; margin-bottom: 30px; padding-right: 50px;
+    }
+    .contruction-img{
+        position: relative;
+        .contruction-img-front{
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
